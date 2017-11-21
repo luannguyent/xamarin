@@ -27,8 +27,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LocalStorage\IDatabase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LocalStorage\MoneyLoverDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\IConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\MoneyLoverConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DataBaseHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TransactionType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\TransactionItemStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">

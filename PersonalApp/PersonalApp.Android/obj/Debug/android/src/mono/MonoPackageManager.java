@@ -108,6 +108,8 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "PersonalApp.Android.dll" comes first in this list. */
 		"PersonalApp.Android.dll",
 		"FormsViewGroup.dll",
+		"Plugin.Settings.Abstractions.dll",
+		"Plugin.Settings.dll",
 		"SQLite.Net.Async.dll",
 		"SQLite.Net.dll",
 		"SQLite.Net.Platform.XamarinAndroid.dll",

@@ -1,4 +1,5 @@
-﻿using PersonalApp.Models;
+﻿using PersonalApp.Helpers;
+using PersonalApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,42 +13,51 @@ namespace PersonalApp
         public ObservableCollection<TransactionType> TransactionTypes { get; set; }
         public NewItemPage()
         {
-            InitializeComponent();
-            TransactionTypes = new ObservableCollection<TransactionType>()
+            try
             {
-                new TransactionType()
+                InitializeComponent();
+                var transactionTypes = DataBaseHelper.Connection.Table<TransactionType>().ToListAsync().Result;
+                TransactionTypes = new ObservableCollection<TransactionType>(transactionTypes);
+                //TransactionTypes = new ObservableCollection<TransactionType>()
+                //{
+                //    new TransactionType()
+                //    {
+                //        Id = 1,
+                //        Name = "Food And Drink"
+                //    },
+                //    new TransactionType()
+                //    {
+                //        Id = 2,
+                //        Name = "Payment"
+                //    },
+                //    new TransactionType()
+                //    {
+                //        Id = 3,
+                //        Name = "Shopping"
+                //    },
+                //    new TransactionType()
+                //    {
+                //        Id = 4,
+                //        Name = "Transport"
+                //    },
+                //    new TransactionType()
+                //    {
+                //        Id = 5,
+                //        Name = "Salary"
+                //    }
+                //};
+                TransactionItem = new TransactionItem
                 {
-                    Id = 1,
-                    Name = "Food And Drink"
-                },
-                new TransactionType()
-                {
-                    Id = 2,
-                    Name = "Payment"
-                },
-                new TransactionType()
-                {
-                    Id = 3,
-                    Name = "Shopping"
-                },
-                new TransactionType()
-                {
-                    Id = 4,
-                    Name = "Transport"
-                },
-                new TransactionType()
-                {
-                    Id = 5,
-                    Name = "Salary"
-                }
-            };
-            TransactionItem = new TransactionItem
-            {
-                Amount = 0.0,
-                Description = "This is an item description."
-            };
+                    Amount = 0.0,
+                    Description = "This is an item description."
+                };
 
-            BindingContext = this;
+                BindingContext = this;
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         async void Save_Clicked(object sender, EventArgs e)

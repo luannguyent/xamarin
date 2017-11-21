@@ -1,5 +1,7 @@
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\PersonalApp.Android.dll
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\FormsViewGroup.dll
+D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Plugin.Settings.Abstractions.dll
+D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Plugin.Settings.dll
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\SQLite.Net.Async.dll
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\SQLite.Net.dll
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\SQLite.Net.Platform.XamarinAndroid.dll

@@ -10,11 +10,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite.Net.Interop;
-using PersonalApp.LocalStorage;
+using PersonalApp.DataAccess;
+using PersonalApp.Droid;
+using System.IO;
 
+[assembly: Xamarin.Forms.Dependency(typeof(DatabaseDroid))]
 namespace PersonalApp.Droid
 {
-    public class DatabaseDroid : IDatabase
+    public class DatabaseDroid : IConnection
     {
         public ISQLitePlatform SqlitePlatform
         {
@@ -27,7 +30,8 @@ namespace PersonalApp.Droid
         {
             get
             {
-                return System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                var path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"moneylover.db3");
+                return path;
             }
         }
     }
