@@ -63,11 +63,4 @@ D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\bin\Debug\Plugin.Settin
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\bin\Debug\Plugin.Settings.Abstractions.xml
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\bin\Debug\Plugin.Settings.dll.mdb
 D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\bin\Debug\Plugin.Settings.Abstractions.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\bin\Debug\PersonalApp.Android.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\PersonalApp.Android.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Plugin.Settings.Abstractions.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Plugin.Settings.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
-D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\MyProject\PersonalApp\PersonalApp\PersonalApp.Android\obj\Debug\PersonalApp.Android.csprojResolveAssemblyReference.cache

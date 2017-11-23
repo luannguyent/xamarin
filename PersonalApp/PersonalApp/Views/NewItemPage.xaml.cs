@@ -3,6 +3,7 @@ using PersonalApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace PersonalApp
@@ -13,50 +14,29 @@ namespace PersonalApp
         public ObservableCollection<TransactionType> TransactionTypes { get; set; }
         public NewItemPage()
         {
+            InitializeComponent();
+            InitializeData();
+            BindingContext = this;
+        }
+
+        public void InitializeData()
+        {
             try
             {
-                InitializeComponent();
+                //Load Transaction Type
                 var transactionTypes = DataBaseHelper.Connection.Table<TransactionType>().ToListAsync().Result;
                 TransactionTypes = new ObservableCollection<TransactionType>(transactionTypes);
-                //TransactionTypes = new ObservableCollection<TransactionType>()
-                //{
-                //    new TransactionType()
-                //    {
-                //        Id = 1,
-                //        Name = "Food And Drink"
-                //    },
-                //    new TransactionType()
-                //    {
-                //        Id = 2,
-                //        Name = "Payment"
-                //    },
-                //    new TransactionType()
-                //    {
-                //        Id = 3,
-                //        Name = "Shopping"
-                //    },
-                //    new TransactionType()
-                //    {
-                //        Id = 4,
-                //        Name = "Transport"
-                //    },
-                //    new TransactionType()
-                //    {
-                //        Id = 5,
-                //        Name = "Salary"
-                //    }
-                //};
+
+                //Set default data
                 TransactionItem = new TransactionItem
                 {
                     Amount = 0.0,
                     Description = "This is an item description."
                 };
-
-                BindingContext = this;
             }
             catch(Exception ex)
             {
-
+                Debug.WriteLine(ex);
             }
         }
 

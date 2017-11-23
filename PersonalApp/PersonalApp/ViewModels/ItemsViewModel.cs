@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalApp.Helpers;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace PersonalApp
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Transaction";
             Items = new ObservableCollection<TransactionItem>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -22,11 +23,11 @@ namespace PersonalApp
             {
                 var _item = item as TransactionItem;
                 Items.Add(_item);
-                //await DataStore.AddItemAsync(_item);
+                await DataBaseHelper.Connection.InsertAsync(_item);
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        private async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;
@@ -36,11 +37,11 @@ namespace PersonalApp
             try
             {
                 Items.Clear();
-                //var items = await DataStore.GetItemsAsync(true);
-                //foreach (var item in items)
-                //{
-                //    Items.Add(item);
-                //}
+                var items = DataBaseHelper.Connection.Table<TransactionItem>().ToListAsync().Result;
+                foreach (var item in items)
+                {
+                    Items.Add(item);
+                }
             }
             catch (Exception ex)
             {
